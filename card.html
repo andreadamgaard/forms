@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="cardnr">Cardnumber</label>
+        <input type="number" name="cardnr" id="cardnr" required maxlength="16">
+
+        <label for="date">Card date</label>
+        <input type="number" name="date" id="month" required maxlength="2">
+
+        /
+
+        <input type="number" name="date" id="year" required maxlength="2">
+
+        <label for="cvc">CVC</label>
+        <input type="text" name="cvc" id="cvc" required maxlength="3">
+    </form>
+</body>
+
+</html>
+
+
+<script>
+    const inputs = document.querySelectorAll("form input");
+    inputs.forEach((input, index) => {
+        console.log(index)
+        input.addEventListener("input", () => {
+            if (input.value.length == input.maxLength) {
+                inputs[index + 1].focus()
+            }
+        });
+    });
+
+    /*const cardnr = document.querySelector("#cardnr");
+    const month = document.querySelector("#month");
+    const year = document.querySelector("#year");
+    const cvc = document.querySelector("#cvc");
+    
+    cardnr.addEventListener("input", ()=>{
+      if (cardnr.value.length == cardnr.maxLength){
+        month.focus();
+      }
+    });
+    month.addEventListener("input", ()=>{
+      if (month.value.length == 2){
+        year.focus();
+      }
+    }); */
+</script>
