@@ -73,6 +73,12 @@ form {
       padding: 0.5rem;
       border: 1px solid lightgray;
     }
+    select {
+      background-color: rgb(235, 233, 233);
+      border-radius: 5px;
+      padding: 0.5rem;
+      border: 1px solid lightgray;
+    }
   }
 
   .form_control:has(input:user-invalid) + .error-message {
